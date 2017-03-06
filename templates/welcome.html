@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{user.username}} Dashboard
+{% endblock %}
+
+{% block content %}
+	<h2>Welcome back {{user.first_name}} {{user.last_name}}</h2>
+	<p>You have {{likes}} likes</p>
+
+	<h3>Your Post</h3>
+	{% for post in posts %}
+        <div class="row">
+        	<div class="col-md-12">
+            	{{ post.render(user = user) | safe }}
+            </div>
+         </div>
+    {% endfor %}
+{% endblock %}

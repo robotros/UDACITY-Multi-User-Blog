@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+    {% block title %}
+        Login
+    {% endblock %}
+    {% block content %}
+        <p class='error-msg'>{{error_msg}}</p>
+    	<form method="post">
+    		<div class="form-group">
+    			<label for="username">Username</label>
+    			<input type="text" id="username" name="username" class="form-control" value="{{username}}"
+                placeholder="Username"/>
+    		</div>
+    		<div class="form-group">
+    			<label for="pw">Password</label>
+    			<input type="password" id="pw" name="password" class= "form-control" placeholder="Password"/>
+    		</div>
+    		<button type="submit" class="btn btn-default">Login</button>
+    	</form>
+    	<p> New User? <a href="/blog/signup">Register</a></p>
+    {% endblock %}

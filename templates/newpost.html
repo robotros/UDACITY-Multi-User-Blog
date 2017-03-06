@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+	New Post
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-12">
+	    	<form method="post">
+	    		<div class="form-group {{error_subj}}">
+	    			<label for="blog_subject">Subject</label>
+	    			<input type="text" class="form-control" id="blog_subject" name="subject" value="{{subject}}"
+	    			placeholder="Subject">
+	    			<span id="helpBlock" class="help-block">{{error_subj_msg}}</span>
+	    		</div>
+	    		<div class="form-group {{error_con}}">
+	    			<label for="blog_content">Content</label>
+	    			<textarea class="form-control" rows="10" id="blog_content" 
+	    				name="content">{{content}}</textarea>
+	    			<span id="helpBlock" class="help-block">{{error_con_msg}}</span>
+	    		</div>
+		    	<button type="submit" class="btn btn-default">Submit</button>
+	    	</form>
+	    </div>
+	</div>
+{% endblock %}
